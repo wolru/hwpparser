@@ -11,7 +11,7 @@ class LatexConverter {
             redirectErrorStream(true)
         }
         val process = processBuilder.start()
-        BufferedReader(InputStreamReader(process.inputStream, "euc-kr")).use { br ->
+        BufferedReader(InputStreamReader(process.inputStream)).use { br ->
             val latex = br.lines().toList().joinToString(separator = "")
             process.waitFor()
             return latex
