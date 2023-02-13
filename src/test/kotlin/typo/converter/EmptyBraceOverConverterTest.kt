@@ -9,15 +9,12 @@ class EmptyBraceOverConverterTest {
 
     @Test
     fun convertTest() {
-        val text = "1over2"
-        val convertedText = emptyBraceOverConverter.convert(text)
+        var text = "1over2"
+        var convertedText = emptyBraceOverConverter.convert(text)
         assertEquals("{1}over{2}", convertedText)
-    }
 
-    @Test
-    fun convertPowTest() {
-        val text = "1over2 ^{3}"
-        val convertedText = emptyBraceOverConverter.convert(text)
+        text = "1over2 ^{3}"
+        convertedText = emptyBraceOverConverter.convert(text)
         assertEquals("{1}over{2 ^{3}}", convertedText)
     }
 }

@@ -5,7 +5,7 @@ import kr.dogfoot.hwplib.tool.textextractor.TextExtractor
 import typo.TypoChecker
 
 fun main(args: Array<String>) {
-    val latexConverter = LatexConverter();
+    val latexConverter = LatexConverter()
     val typoChecker = TypoChecker()
     val htmlGenerator = HtmlGenerator()
     val imageGenerator = ImageGenerator()
