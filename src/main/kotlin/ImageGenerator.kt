@@ -1,5 +1,6 @@
 import kr.dogfoot.hwplib.`object`.HWPFile
 import java.io.File
+import java.nio.file.Paths
 
 class ImageGenerator {
     fun generate(hwp: HWPFile, text: String): String {
@@ -8,7 +9,7 @@ class ImageGenerator {
             it.binDataID
         }
         hwp.binData.embeddedBinaryDataList.sortedBy { it.name }.map {
-            File("/Users/hanbitkim/hwp/${it.name}").apply {
+            File("${Paths.get("hwp").toAbsolutePath()}/${it.name}").apply {
                 writeBytes(it.data)
             }
         }.forEachIndexed { index, file ->

@@ -11,7 +11,7 @@ class HtmlGenerator {
         BufferedReader(FileReader(htmlFile)).use { br ->
             val template = br.readLines().toList().joinToString("\n")
             val html = template.replace("<contents/>", text)
-            File("/Users/hanbitkim/hwp/index.html").apply {
+            File("${Paths.get("hwp").toAbsolutePath()}/index.html").apply {
                 writeText(html)
             }
         }
