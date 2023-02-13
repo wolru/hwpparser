@@ -17,6 +17,7 @@ fun main(args: Array<String>) {
     var hwpText = TextExtractor.extract(hwpFile, textExtractOption)
     hwpText = imageGenerator.generate(hwpFile, hwpText)
     hwpText = typoChecker.check(hwpText)
+    println(hwpText)
     hwpText = latexConverter.convert(hwpText)
     htmlGenerator.generate(hwpText)
 }

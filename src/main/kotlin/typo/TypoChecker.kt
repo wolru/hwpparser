@@ -1,13 +1,15 @@
 package typo
 
+import typo.converter.EmptyBraceBoxConverter
 import typo.converter.EmptyBraceOverConverter
 import typo.converter.EmptySpaceTimesConverter
 import typo.converter.SingleBraceDotConverter
 class TypoChecker {
     private val typoConverters = listOf(
-        EmptySpaceTimesConverter(),
         SingleBraceDotConverter(),
+        EmptySpaceTimesConverter(),
         EmptyBraceOverConverter(),
+        EmptyBraceBoxConverter(),
     )
 
     fun check(text: String): String {
