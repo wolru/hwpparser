@@ -4,7 +4,7 @@ import typo.TypoConverter
 
 class SingleBraceDotConverter : TypoConverter {
     override fun convert(text: String): String {
-        val matches = Regex("[^{](dot\\{[0-9+]})").findAll(text).toList()
+        val matches = Regex("[ *]?(dot\\{[0-9+]})").findAll(text).toList()
         if (matches.isEmpty()) {
             return text
         }
