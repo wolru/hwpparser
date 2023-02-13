@@ -18,6 +18,6 @@ class EmptyBraceOverConverterTest {
     fun convertPowTest() {
         val text = "1over2 ^{3}"
         val convertedText = emptyBraceOverConverter.convert(text)
-        assertEquals("{1}over{2^{3}}", convertedText)
+        assertEquals("{1}over{2 ^{3}}", convertedText)
     }
 }
