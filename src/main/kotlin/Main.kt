@@ -1,10 +1,13 @@
+import deco.TagDecorator
+import html.HtmlGenerator
+import image.ImageGenerator
 import kr.dogfoot.hwplib.reader.HWPReader
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractMethod
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractOption
 import kr.dogfoot.hwplib.tool.textextractor.TextExtractor
+import latex.LatexConverter
 import typo.PostCorrectionConverter
 import typo.TypoConverter
-import typo.TypoConverterInterface
 import java.nio.file.Paths
 import kotlin.io.path.*
 
@@ -23,5 +26,6 @@ fun main(args: Array<String>) {
     hwpText = TypoConverter().convert(hwpText)
     hwpText = LatexConverter().convert(hwpText)
     hwpText = PostCorrectionConverter().convert(hwpText)
+    hwpText = TagDecorator().decorate(hwpText);
     HtmlGenerator().generate(hwpText)
 }

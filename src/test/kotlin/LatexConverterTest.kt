@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.Assertions.*
+import latex.LatexConverter
 import org.junit.jupiter.api.Test
 
 class LatexConverterTest {
