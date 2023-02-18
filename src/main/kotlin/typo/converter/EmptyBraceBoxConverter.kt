@@ -1,8 +1,8 @@
 package typo.converter
 
-import typo.TypoConverter
+import typo.TypoConverterInterface
 
-class EmptyBraceBoxConverter : TypoConverter {
+class EmptyBraceBoxConverter : TypoConverterInterface {
     override fun convert(text: String): String {
         val matches = Regex("(\\{ *)?box( *\\{[^}]*})( *})?", RegexOption.IGNORE_CASE).findAll(text).toList()
         if (matches.isEmpty()) {

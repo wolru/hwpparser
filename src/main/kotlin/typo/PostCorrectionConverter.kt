@@ -2,13 +2,9 @@ package typo
 
 import typo.converter.*
 
-class TypoConverter {
+class PostCorrectionConverter {
     private val converters = listOf(
-        SingleBraceDotConverter(),
-        EmptySpaceTimesConverter(),
-        EmptyBraceOverConverter(),
-        EmptyBraceBoxConverter(),
-        ItalicFontConverter(),
+        RomanFontConverter(),
     )
 
     fun convert(text: String): String {

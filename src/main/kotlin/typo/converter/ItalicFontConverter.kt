@@ -2,15 +2,15 @@ package typo.converter
 
 import typo.TypoConverterInterface
 
-class EmptyBraceOverConverter : TypoConverterInterface {
+class ItalicFontConverter : TypoConverterInterface {
     override fun convert(text: String): String {
-        val matches = Regex("([0-9]+)over([0-9]+( *\\^\\{[0-9]+})?)").findAll(text).toList()
+        val matches = Regex("([^a-zA-Z])(it *)", RegexOption.IGNORE_CASE).findAll(text).toList()
         if (matches.isEmpty()) {
             return text
         }
         var replacedText = text
         matches.reversed().forEach {
-            replacedText = replacedText.replaceRange(it.range.first, it.range.last + 1, "{${it.groupValues[1]}}over{${it.groupValues[2]}}")
+            replacedText = replacedText.replaceRange(it.range.first, it.range.last + 1, "${it.groupValues[1]}")
         }
         return replacedText
     }

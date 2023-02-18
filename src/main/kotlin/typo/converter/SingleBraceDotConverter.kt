@@ -1,8 +1,8 @@
 package typo.converter
 
-import typo.TypoConverter
+import typo.TypoConverterInterface
 
-class SingleBraceDotConverter : TypoConverter {
+class SingleBraceDotConverter : TypoConverterInterface {
     override fun convert(text: String): String {
         val matches = Regex("[ *]?(dot\\{[0-9+]})").findAll(text).toList()
         if (matches.isEmpty()) {
